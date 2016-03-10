@@ -1,0 +1,41 @@
+{
+  "uuid": "43d69bf6-1352-4ed8-aa87-32c4291a8dd6",
+  "shortName": "Rain",
+  "longName": "Rain",
+  "companyName": "Wim Van Aerschot",
+  "versionLabel": "1.9",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt", "chalk"],
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "KEY_READY": 0,
+    "KEY_LOCATION": 1,
+    "KEY_RAINDROPS": 2,
+    "KEY_RAINTIMES": 3,
+    "KEY_RAINPERHOUR": 4,
+    "KEY_RAINUNIT": 5,
+    "KEY_NOW": 6,
+    "KEY_REFRESH": 7,
+    "KEY_TEMP": 8,
+    "KEY_DATE": 9,
+    "KEY_LONGTERM": 10,
+    "KEY_24H": 11
+  },
+  "capabilities": [
+    "location",
+    "configurable"
+  ],
+  "resources": {
+    "media": [
+      {
+        "type": "font",
+        "name": "UNIBODY_FONT_12",
+        "file": "Unibody.ttf",
+        "compatibility":"2.7",
+        "characterRegex": "[0-9:minhu/,. ]"
+      }
+    ]
+  }
+}
