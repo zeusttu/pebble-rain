@@ -588,7 +588,7 @@ function getCity(pos, callApiFromCountry) {
       // Assemble dictionary using our keys
       var dictionary = {
         "KEY_READY": null,
-        "KEY_LOCATION": location,
+        "KEY_LOCATION": lat.toFixed(4) + ", " + lng.toFixed(4),
         "KEY_RAINDROPS": null,
         "KEY_RAINTIMES": null,
         "KEY_RAINPERHOUR": null,
