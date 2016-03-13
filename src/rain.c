@@ -32,18 +32,11 @@ static GPath *s_graph_path;
 static uint8_t amountOfData = 0;
 static uint8_t rainDrops[61];
 static uint8_t ampms[61];
-static char* rainPerHour[61];
-static char* rainTimes[61];
-static char* temps[61];
-static char* dates[61];
 
-static char rainPerH[61][6];
-
-static char rainTime[61][6];
-
-static char temp[61][6];
-
-static char date[61][6];
+static char rainPerHour[61][6];
+static char rainTimes[61][6];
+static char temps[61][6];
+static char dates[61][6];
 
 static char* rainUnit;
 static uint8_t currentDataIterator = 0;
@@ -213,14 +206,10 @@ static void dataProcessor(Tuple *dataDrop, Tuple *dataPerHour, Tuple *dataTime, 
   rainDrops[currentDataIterator] = dataDrop->value->int8;
   ampms[currentDataIterator] = dataAmpm->value->int8;
 
-  snprintf(rainPerH[currentDataIterator],  sizeof(rainPerH[0]),  "%s", dataPerHour->value->cstring);
-  rainPerHour[currentDataIterator] = rainPerH[currentDataIterator];
-  snprintf(rainTime[currentDataIterator],  sizeof(rainTime[0]),  "%s", dataTime->value->cstring);
-  rainTimes[currentDataIterator] = rainTime[currentDataIterator];
-  snprintf(date[currentDataIterator],  sizeof(date[0]),  "%s", dataDate->value->cstring);
-  dates[currentDataIterator] = date[currentDataIterator];
-  snprintf(temp[currentDataIterator],  sizeof(temp[0]),  "%s", dataTemp->value->cstring);
-  temps[currentDataIterator] = temp[currentDataIterator];
+  snprintf(rainPerHour[currentDataIterator],  sizeof(rainPerHour[0]),  "%s", dataPerHour->value->cstring);
+  snprintf(rainTimes[currentDataIterator],  sizeof(rainTimes[0]),  "%s", dataTime->value->cstring);
+  snprintf(dates[currentDataIterator],  sizeof(dates[0]),  "%s", dataDate->value->cstring);
+  snprintf(temps[currentDataIterator],  sizeof(temps[0]),  "%s", dataTemp->value->cstring);
 
   APP_LOG(APP_LOG_LEVEL_INFO, "current iterator: %d", currentDataIterator);
   APP_LOG(APP_LOG_LEVEL_INFO, "current amount: %d", amountOfData);
